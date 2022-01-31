@@ -1,94 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-	<meta charset="utf-8">
+  <meta charset="UTF-8">
+  <title>汇总</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
 
-	<title>敲方块</title>
-	<link rel="icon" type="image/png" href="ico2.png">
-	<meta name="description" content="A game about smashing cubes.">
-	<meta name="theme-color" content="#2c3f51">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-
-	<!-- build:css combined.css -->
-	<link rel="stylesheet" href="css/style.css">
-	<!-- endbuild -->
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139938978-1"></script>
-	<script>
-		if (location.hostname !== 'localhost') {
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-139938978-1');
-		}
-	</script>
 </head>
 <body>
-	<!-- Game canvas -->
-	<canvas id="c"></canvas>
+<!-- partial:index.partial.html -->
+<div class="husky">
+  <div class="mane">
+    <div class="coat"></div>
+  </div>
+  <div class="body">
+    <div class="head">
+      <div class="ear"></div>
+      <div class="ear"></div>
+      <div class="face">
+        <div class="eye"></div>
+        <div class="eye"></div>
+        <div class="nose"></div>
+        <div class="mouth">
+          <div class="lips"></div>
+          <div class="tongue"></div>
+        </div>
+      </div>
+    </div>
+    <div class="torso"></div>
+  </div>
+  <div class="legs">
+    <div class="front-legs">
+      <div class="leg"></div>
+      <div class="leg"></div>
+    </div>
+    <div class="hind-leg">
+    </div>
+  </div>
+  <div class="tail">
+    <div class="tail">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-	<!-- Gameplay HUD -->
-	<div class="hud">
-		<div class="hud__score">
-			<div class="score-lbl"></div>
-			<div class="cube-count-lbl"></div>
-		</div>
-		<div class="pause-btn"><div></div></div>
-		<div class="slowmo">
-			<div class="slowmo__bar"></div>
-		</div>
-	</div>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="position:absolute">
+  <defs>
 
-	<!-- Menu System -->
-	<div class="menus">
-		<div class="menu menu--main">
-			<h1>敲方块</h1>
-			<button type="button" class="play-normal-btn">  开始!</button>
-			<button type="button" class="play-casual-btn">休闲模式</button>
-			<div class="credits">由<a href="https://cmiller.tech">Caleb Miller</a>制作的8kB的游戏</div>
-		</div>
-		<div class="menu menu--pause">
-			<h1>暂停</h1>
-			<button type="button" class="resume-btn">重新开始</button>
-			<button type="button" class="menu-btn--pause">主菜单</button>
-		</div>
-		<div class="menu menu--score">
-			<h1>游戏结束</h1>
-			<h2>你的分数:</h2>
-			<div class="final-score-lbl"></div>
-			<div class="high-score-lbl"></div>
-			<button type="button" class="play-again-btn"> AGAIN!</button>
-			<button type="button" class="menu-btn--score">主菜单</button>
-		</div>
-	</div>
-
-	<!-- build:js combined.js -->
-	<script src="js/globalConfig.js"></script>
-	<script src="js/state.js"></script>
-	<script src="js/utils.js"></script>
-	<script src="js/3dModels.js"></script>
-	<script src="js/Entity.js"></script>
-	<script src="js/getTarget.js"></script>
-	<script src="js/createBurst.js"></script>
-	<script src="js/sparks.js"></script>
-	<script src="js/hud.js"></script>
-	<script src="js/menus.js"></script>
-	<script src="js/actions.js"></script>
-	<script src="js/tick.js"></script>
-	<script src="js/draw.js"></script>
-	<script src="js/canvas.js"></script>
-	<script src="js/interaction.js"></script>
-	<script src="js/index.js"></script>
-	<!-- endbuild -->
-
-	<!-- build:remove -->
-	<script src="js/PERF.js"></script>
-	<script src="js/tests/expect.min.js"></script>
-	<script src="js/tests/testRunner.js"></script>
-	<script src="js/tests/utils.test.js"></script>
-	<!-- endbuild -->
+    
+    <filter id="squiggly-0">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/>
+      <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
+    </filter>
+    <filter id="squiggly-1">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+    </filter>
+    
+    <filter id="squiggly-2">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+    </filter>
+    <filter id="squiggly-3">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+    </filter>
+    
+    <filter id="squiggly-4">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+    </filter>
+  </defs> 
+</svg>
+<!-- partial -->
+  <script  src="./script.js"></script>
+<h2>开源小游戏</h2>
+<ol>
+    <li>
+        <a href="./001/001.html">敲方块</a>
+    </li>
+    
+    <li>
+        <a href="./002/002.html">COLORON</a>
+    </li>
+    
+    <li>
+        <a href="./003/003.html">简易国际象棋</a>
+    </li>
+    
+    <li>
+        <a href="./004/004.html">忍者过桥</a>
+    </li>
+</ol>
 </body>
 </html>
